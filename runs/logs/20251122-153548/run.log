@@ -1,0 +1,80 @@
+[2025-11-22 15:35:48,055] [INFO] Starting run 20251122-153548
+[2025-11-22 15:35:48,056] [INFO] Train Dir: /home/gunin/Desktop/Project/AI-gen-detection/dataset/train
+[2025-11-22 15:35:48,056] [INFO] Val Dir:   /home/gunin/Desktop/Project/AI-gen-detection/dataset/val
+[2025-11-22 15:35:48,056] [INFO] Test Dir:  /home/gunin/Desktop/Project/AI-gen-detection/dataset/test
+[2025-11-22 15:35:48,221] [INFO] Classes detected: ['deepfake', 'real']
+[2025-11-22 15:35:48,481] [INFO] Building simplified model with input_shape=(224, 224, 3)
+[2025-11-22 15:35:48,579] [INFO] Model: "sequential_1"
+[2025-11-22 15:35:48,579] [INFO] _________________________________________________________________
+[2025-11-22 15:35:48,579] [INFO]  Layer (type)                Output Shape              Param #   
+[2025-11-22 15:35:48,579] [INFO] =================================================================
+[2025-11-22 15:35:48,579] [INFO]  conv2d (Conv2D)             (None, 224, 224, 32)      896       
+[2025-11-22 15:35:48,579] [INFO]                                                                  
+[2025-11-22 15:35:48,579] [INFO]  batch_normalization (Batch  (None, 224, 224, 32)      128       
+[2025-11-22 15:35:48,579] [INFO]  Normalization)                                                  
+[2025-11-22 15:35:48,579] [INFO]                                                                  
+[2025-11-22 15:35:48,579] [INFO]  conv2d_1 (Conv2D)           (None, 224, 224, 32)      9248      
+[2025-11-22 15:35:48,579] [INFO]                                                                  
+[2025-11-22 15:35:48,579] [INFO]  batch_normalization_1 (Bat  (None, 224, 224, 32)      128       
+[2025-11-22 15:35:48,579] [INFO]  chNormalization)                                                
+[2025-11-22 15:35:48,579] [INFO]                                                                  
+[2025-11-22 15:35:48,579] [INFO]  max_pooling2d (MaxPooling2  (None, 112, 112, 32)      0         
+[2025-11-22 15:35:48,579] [INFO]  D)                                                              
+[2025-11-22 15:35:48,579] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  conv2d_2 (Conv2D)           (None, 112, 112, 64)      18496     
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  batch_normalization_2 (Bat  (None, 112, 112, 64)      256       
+[2025-11-22 15:35:48,580] [INFO]  chNormalization)                                                
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  conv2d_3 (Conv2D)           (None, 112, 112, 64)      36928     
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  batch_normalization_3 (Bat  (None, 112, 112, 64)      256       
+[2025-11-22 15:35:48,580] [INFO]  chNormalization)                                                
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  max_pooling2d_1 (MaxPoolin  (None, 56, 56, 64)        0         
+[2025-11-22 15:35:48,580] [INFO]  g2D)                                                            
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  conv2d_4 (Conv2D)           (None, 56, 56, 128)       73856     
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  batch_normalization_4 (Bat  (None, 56, 56, 128)       512       
+[2025-11-22 15:35:48,580] [INFO]  chNormalization)                                                
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  conv2d_5 (Conv2D)           (None, 56, 56, 128)       147584    
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  batch_normalization_5 (Bat  (None, 56, 56, 128)       512       
+[2025-11-22 15:35:48,580] [INFO]  chNormalization)                                                
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  max_pooling2d_2 (MaxPoolin  (None, 28, 28, 128)       0         
+[2025-11-22 15:35:48,580] [INFO]  g2D)                                                            
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  global_average_pooling2d (  (None, 128)               0         
+[2025-11-22 15:35:48,580] [INFO]  GlobalAveragePooling2D)                                         
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,580] [INFO]  dropout (Dropout)           (None, 128)               0         
+[2025-11-22 15:35:48,580] [INFO]                                                                  
+[2025-11-22 15:35:48,581] [INFO]  dense (Dense)               (None, 64)                8256      
+[2025-11-22 15:35:48,581] [INFO]                                                                  
+[2025-11-22 15:35:48,581] [INFO]  dropout_1 (Dropout)         (None, 64)                0         
+[2025-11-22 15:35:48,581] [INFO]                                                                  
+[2025-11-22 15:35:48,581] [INFO]  dense_1 (Dense)             (None, 1)                 65        
+[2025-11-22 15:35:48,581] [INFO]                                                                  
+[2025-11-22 15:35:48,581] [INFO] =================================================================
+[2025-11-22 15:35:48,581] [INFO] Total params: 297121 (1.13 MB)
+[2025-11-22 15:35:48,581] [INFO] Trainable params: 296225 (1.13 MB)
+[2025-11-22 15:35:48,581] [INFO] Non-trainable params: 896 (3.50 KB)
+[2025-11-22 15:35:48,581] [INFO] _________________________________________________________________
+[2025-11-22 15:35:48,581] [INFO] Training for 50 epochs. Checkpoints -> runs/models/20251122-153548/best_model.h5
+[2025-11-22 16:13:03,380] [INFO] Saved final model to runs/models/20251122-153548/final_model.h5 and SavedModel to runs/models/20251122-153548/saved_model
+[2025-11-22 16:13:03,657] [INFO] Saved training plots to runs/plots/20251122-153548
+[2025-11-22 16:13:03,657] [INFO] 🔍 Starting evaluation...
+[2025-11-22 16:13:09,501] [INFO] Test Loss: 0.1841
+[2025-11-22 16:13:09,502] [INFO] Test Accuracy: 0.9275
+[2025-11-22 16:13:09,502] [INFO] Generating predictions...
+[2025-11-22 16:13:16,185] [INFO] Saving confusion matrix...
+[2025-11-22 16:13:16,466] [INFO] Confusion matrix saved at: runs/plots/20251122-153548/confusion_matrix.png
+[2025-11-22 16:13:16,466] [INFO] Saving classification report...
+[2025-11-22 16:13:16,470] [INFO] Classification report saved at: runs/reports/20251122-153548/classification_report.txt
+[2025-11-22 16:13:16,470] [INFO] Saving ROC curve...
+[2025-11-22 16:13:16,645] [INFO] ROC curve saved at: runs/plots/20251122-153548/roc_curve.png
+[2025-11-22 16:13:16,645] [INFO] ✅ Evaluation Completed.
+[2025-11-22 16:13:16,645] [INFO] Run finished.

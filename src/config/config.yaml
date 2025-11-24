@@ -1,2 +1,40 @@
+dataset:
+  train_dir: "/home/gunin/Desktop/Project/AI-gen-detection/dataset/train"
+  val_dir:   "/home/gunin/Desktop/Project/AI-gen-detection/dataset/val" 
+  test_dir: "/home/gunin/Desktop/Project/AI-gen-detection/dataset/test"
+  img_height: 224
+  img_width: 224
+  batch_size: 32
+  shuffle: true
+  validation_split: 0.2
+  seed: 42
+
+augmentation:
+  flip_horizontal: true
+  flip_vertical: false
+  rotation: 0.10
+  zoom: 0.1
+  brightness: 0.1
+
 model:
-  image_size: 128
+  input_height: 224
+  input_width: 224
+  input_channels: 3
+  learning_rate: 0.0001
+  loss: "binary_crossentropy"
+  metrics:
+    - "accuracy"
+
+training:
+  epochs: 50
+  early_stopping_patience: 6
+  reduce_lr: true
+
+logging:
+  level: "INFO"
+  log_to_file: true
+  filename: "run.log"
+  format: "[%(asctime)s] [%(levelname)s] %(message)s"
+
+paths:
+  runs_dir: "runs"
